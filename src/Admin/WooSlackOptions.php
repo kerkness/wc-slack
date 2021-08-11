@@ -50,7 +50,7 @@ class WooSlackOptions
      */
     public function wooslack_admin_settings_menu()
     {
-        add_options_page('WooSlack', 'WooSlack', 'manage_options', 'woohub-options-page', [$this, 'wooslack_options_page']);
+        add_options_page('WooSlack', 'WooSlack', 'manage_options', 'wooslack-options-page', [$this, 'wooslack_options_page']);
     }
 
     /**
