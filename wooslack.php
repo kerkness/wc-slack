@@ -56,3 +56,9 @@ function _get_wooslack_plugin_url() {
  */
 WooSlack::init();
 
+// Post to slack
+if (!function_exists('wooslack_post')) {
+	function wooslack_post($message, $channel = '', $attachements = null) {
+		WooSlack::post($message, $channel, $attachements);
+	}
+}
