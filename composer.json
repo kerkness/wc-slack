@@ -1,0 +1,28 @@
+{
+    "name": "artmoi/wooslack",
+    "description": "Integrates WooCommerce and Slack.",
+    "keywords": ["wordpress", "plugin", "woocommerce", "slack"],
+    "homepage": "https://kerkness.ca",
+    "license": "GNU",
+    "authors": [
+      {
+        "name": "kerkness",
+        "email": "ryan@kerkness.ca",
+        "homepage": "https://kerkness.ca"
+      }
+    ],
+    "type": "wordpress-plugin",
+    "require": {
+      "php": ">=7.1.0",
+      "composer/installers": "v1.0.6"
+    },
+    "autoload"    : {
+      "psr-4" : {
+        "WooSlack\\" : "src"
+      }
+    },
+    "config": { 
+      "vendor-dir": "lib"
+    }
+  }
+  
