@@ -2,7 +2,11 @@
 
 Basic slack integration for WooCommerce
 
-# Usage
+### Dependencies
+
+Run `composer install`  to create the autoloader
+
+### Usage
 
 - Setup an incoming web hook for slack https://slack.com/intl/en-ca/help/articles/115005265063-Incoming-webhooks-for-Slack
 - Install plugin
@@ -10,7 +14,7 @@ Basic slack integration for WooCommerce
 - Plugin posts updates on *Registration*, *Login*, *Account Detail Updates*, *Account Address Updates*.
 - More to come.
 
-# Functions
+### Functions
 
 Post your own messages to slack.
 
