@@ -14,27 +14,26 @@ Basic slack integration for WooCommerce
 
 Post your own messages to slack.
 
+*Simple Message*
 ```
-if (function_exists('wooslack_post')) {
+wooslack_post("Hello World!");
+```
 
-    // Simple message
-    wooslack_post("Hello World!");
+*Advanced Message*
+```
+$post = get_post($id);
 
-    // Advanced message
-    $post = get_post($id);
-
-    wooslack_post("Post Update Event", [
-            'color' => '#28a745',
-            'title' => $post->post_title,
-            'text' => "Time Stamp: " . date('Y-m-d D h:i:s a (e)') . "\nPost ID: " . $post->ID ."\Status: " . $post->post_status,
-            'actions' => [
-                [
-                    "type" => "button", 
-                    "name" => "view-post", 
-                    "text" => "View", 
-                    "url" => get_permalink($post)
-                ]
+wooslack_post("Post Update Event", [
+        'color' => '#28a745',
+        'title' => $post->post_title,
+        'text' => "Time Stamp: " . date('Y-m-d D h:i:s a (e)') . "\nPost ID: " . $post->ID ."\Status: " . $post->post_status,
+        'actions' => [
+            [
+                "type" => "button", 
+                "name" => "view-post", 
+                "text" => "View", 
+                "url" => get_permalink($post)
             ]
-    ]);    
-}
+        ]
+]);    
 ```
