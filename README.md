@@ -4,13 +4,13 @@ Basic slack integration for WooCommerce
 
 # Usage
 
-- Setup an incoming web hook for slack @see https://slack.com/intl/en-ca/help/articles/115005265063-Incoming-webhooks-for-Slack
+- Setup an incoming web hook for slack https://slack.com/intl/en-ca/help/articles/115005265063-Incoming-webhooks-for-Slack
 - Install plugin
 - Add your unique slack hook and default channel name in plugin settings
 - Plugin posts updates on *Registration*, *Login*, *Account Detail Updates*, *Account Address Updates*.
 - More to come.
 
-# functions
+# Functions
 
 Post your own messages to slack.
 
@@ -20,6 +20,7 @@ wooslack_post("Hello World!");
 ```
 
 *Advanced Message*
+@see https://api.slack.com/messaging/composing/layouts#attachments
 ```
 $post = get_post($id);
 

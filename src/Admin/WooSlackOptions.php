@@ -68,11 +68,16 @@ class WooSlackOptions
                 <table class="form-table">
                     <tr valign="top">
                         <th scope="row"><?php echo __('Slack Hook', 'wooslack') ?></th>
-                        <td><input type="text" name="wooslack_slack_post_hook" value="<?php echo esc_attr(get_option('wooslack_slack_post_hook')); ?>" /></td>
+                        <td>
+                        https://hooks.slack.com/services    
+                        <input type="text" name="wooslack_slack_post_hook" value="<?php echo esc_attr(get_option('wooslack_slack_post_hook')); ?>" /></td>
                     </tr>
                     <tr valign="top">
                         <th scope="row"><?php echo __('Default Channel', 'wooslack') ?></th>
-                        <td><input type="text" name="wooslack_slack_default_channel" value="<?php echo esc_attr(get_option('wooslack_slack_default_channel')); ?>" /></td>
+                        <td>
+                            <input type="text" name="wooslack_slack_default_channel" value="<?php echo esc_attr(get_option('wooslack_slack_default_channel')); ?>" /><br/>
+                            * Note you have to configure your slack webhook to have permissions for multiple channels.
+                        </td>
                     </tr>
 
                 </table>
