@@ -4,17 +4,23 @@
  * Main plugin file.
  *
  * @package     WooSlack
- * @author      Ryan Mayberry (@kerkness)
+ * @author      Kerkness
  * @license     GNU
  *
  * @wordpress-plugin
  * Plugin Name: WooSlack
- * Description: WooCommerce & Slack Integration
- * Version:     0.1.1
- * Author:      Ryan Mayberry (@kerkness)
+ * Plugin URI: https://kerkness.ca/wooslack
+ * Description: Post messages to slack from woocommerce customer events.
+ * Version:     1.0.0
+ * Requires at least: 5.4
+ * Tested up to: 5.8
+ * Requires PHP: 7.2
+ * Author:      Kerkness
  * Author URI:  https://kerkness.ca
  * Text Domain: wooslack
  * Domain Path: /languages
+ * License: GPL2+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html 
  */
 
 
@@ -50,6 +56,14 @@ function _get_wooslack_plugin_url() {
 	return $plugin_url;
 }
 
+/**
+ * Get plugin base name
+ */
+if(!function_exists('_get_wooslack_basename')) {
+	function _get_wooslack_basename() {
+		return plugin_basename( __FILE__ );
+	}
+}
 
 /**
  * Initalize the plugin

@@ -17,7 +17,47 @@ class WooSlackOptions
 
         add_action('init', [$instance, 'wooslack_register_settings']);
         add_action('admin_menu', [$instance, 'wooslack_admin_settings_menu']);
+        add_filter('plugin_action_links_' . _get_wooslack_basename(), [$instance, 'wooslack_settings_link'], 10, 1);
+        add_filter('plugin_row_meta', [$instance, 'plugin_row_meta'], 10, 2);
 
+    }
+
+    /**
+     * Add a settings link to the plugin listing
+     */
+    public function wooslack_settings_link($links)
+    {
+        // Build and escape the URL.
+        $url = esc_url(add_query_arg(
+            'page',
+            'wooslack-options-page',
+            get_admin_url() . 'admin.php'
+        ));
+        // Create the link.
+        $settings_link = "<a href='$url'>" . __('Settings') . '</a>';
+        // Adds the link to the end of the array.
+        array_push(
+            $links,
+            $settings_link
+        );
+        return $links;
+    }
+
+    /**
+     * Add description links to plugin description
+     */
+    public function plugin_row_meta($links, $file)
+    {
+        if (strpos($file, 'wooslack.php') !== false) {
+            $new_links = [
+                '<a href="https://github.com/kerkness/wooslack" target="_blank">GitHub</a>',
+                '<a href="https://github.com/kerkness/wooslack/issues" target="_blank">Support</a>',
+            ];
+
+            $links = array_merge($links, $new_links);
+        }
+
+        return $links;
     }
 
     /**

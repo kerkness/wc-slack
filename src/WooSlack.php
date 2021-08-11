@@ -2,8 +2,8 @@
 
 namespace WooSlack;
 
-use WooSlack\Admin\WooSlackOptions;
 use WP_User;
+use WooSlack\Admin\WooSlackOptions;
 
 /**
  * WooSlack 
@@ -11,9 +11,6 @@ use WP_User;
  */
 class WooSlack
 {
-    public $default_channel = '';
-    public $hook = '';
-
     /**
      * Initialize Plugin 
      */
@@ -111,11 +108,11 @@ class WooSlack
     }
 
 
-    // TODO: move hook key to .env
+    /**
+     * Post a message to slack
+     */
     public static function post($message, $attachments = null, $channel = '')
     {
-        // $instance = new WooSlack();
-
         $use_channel = $channel ? $channel : get_option( 'wooslack_slack_default_channel' );
 
         $data = json_encode(array(
@@ -124,14 +121,24 @@ class WooSlack
             "attachments" => [$attachments]
         ));
 
-        $ch = curl_init("https://hooks.slack.com/services" . get_option('wooslack_slack_post_hook'));
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $result = curl_exec($ch);
-        curl_close($ch);
+        // validate hook provided in options assuming instructions are not followed.
+        $hook_option = str_replace('https://hooks.slack.com/services', '', get_option('wooslack_slack_post_hook'));
 
-        return $result;
+        // Start with slash
+        $slack_hook = str_starts_with($hook_option, '/')
+            ? 'https://hooks.slack.com/services' . $hook_option
+            : 'https://hooks.slack.com/services/' . $hook_option;
+
+        $response = wp_remote_request($slack_hook, [
+            'method' => 'POST',
+            'headers' => [
+                'Content-Type: application/json',
+                'Accepts: application/json'
+            ],
+            'body' => $data
+        ]);    
+
+        return $response;
     }
 
 }
