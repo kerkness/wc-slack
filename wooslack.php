@@ -10,7 +10,7 @@
  * @wordpress-plugin
  * Plugin Name: WooSlack
  * Description: WooCommerce & Slack Integration
- * Version:     0.1
+ * Version:     0.1.1
  * Author:      Ryan Mayberry (@kerkness)
  * Author URI:  https://kerkness.ca
  * Text Domain: wooslack
