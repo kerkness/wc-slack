@@ -71,8 +71,8 @@ if(!function_exists('_get_wooslack_basename')) {
 WooSlack::init();
 
 // Post to slack
-if (!function_exists('wooslack_post')) {
-	function wooslack_post($message, $channel = '', $attachements = null) {
-		WooSlack::post($message, $channel, $attachements);
+if (!function_exists('wooslack_message')) {
+	function wooslack_message($message, $channel = '', $attachements = null) {
+		WooSlack::message($message, $channel, $attachements);
 	}
 }

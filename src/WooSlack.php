@@ -50,7 +50,7 @@ class WooSlack
             'text' => "Username: " . $user->user_login,
         ];
 
-        WooSlack::post($message, $attachments);
+        WooSlack::message($message, $attachments);
     }
 
     /**
@@ -66,7 +66,7 @@ class WooSlack
             'text' => "Username: " . $user_login,
         ];
 
-        WooSlack::post($message, $attachments);
+        WooSlack::message($message, $attachments);
     }
 
     /**
@@ -84,7 +84,7 @@ class WooSlack
             'text' => "Username: " . $user->user_login,
         ];
 
-        WooSlack::post($message, $attachments);
+        WooSlack::message($message, $attachments);
     
     }
 
@@ -103,7 +103,7 @@ class WooSlack
             'text' => "Address: " . $load_address,
         ];
 
-        WooSlack::post($message, $attachments);
+        WooSlack::message($message, $attachments);
 
     }
 
@@ -111,7 +111,7 @@ class WooSlack
     /**
      * Post a message to slack
      */
-    public static function post($message, $attachments = null, $channel = '')
+    public static function message($message, $attachments = null, $channel = '')
     {
         $use_channel = $channel ? $channel : get_option( 'wooslack_slack_default_channel' );
 
