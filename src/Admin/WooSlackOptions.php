@@ -15,12 +15,34 @@ class WooSlackOptions
     {
         $instance = new WooSlackOptions();
 
+        register_activation_hook( _get_wooslack_basename(), [$instance, 'wooslack_activation_hook'] );
+
         add_action('init', [$instance, 'wooslack_register_settings']);
         add_action('admin_menu', [$instance, 'wooslack_admin_settings_menu']);
         add_filter('plugin_action_links_' . _get_wooslack_basename(), [$instance, 'wooslack_settings_link'], 10, 1);
         add_filter('plugin_row_meta', [$instance, 'plugin_row_meta'], 10, 2);
 
     }
+
+    /**
+     * Plugin Activation Hook
+     */
+    public function wooslack_activation_hook()
+    {
+        register_uninstall_hook(_get_wooslack_basename(), 'wooslack_deactivation_hook' );
+    }
+
+    /**
+     * Plugin deactivation hook
+     */
+    public function wooslack_deactivation_hook()
+    {
+        delete_option( 'wooslack_slack_post_hook' );
+        delete_site_option('wooslack_slack_post_hook');
+        delete_option( 'wooslack_slack_default_channel' );
+        delete_site_option('wooslack_slack_default_channel');
+    }
+
 
     /**
      * Add a settings link to the plugin listing

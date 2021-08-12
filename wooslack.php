@@ -72,7 +72,7 @@ WooSlack::init();
 
 // Post to slack
 if (!function_exists('wooslack_message')) {
-	function wooslack_message($message, $channel = '', $attachements = null) {
-		WooSlack::message($message, $channel, $attachements);
+	function wooslack_message($message, $attachements = null, $channel = '' ) {
+		WooSlack::message($message, $attachements, $channel);
 	}
 }

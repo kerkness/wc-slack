@@ -1,10 +1,10 @@
 # WooSlack
 
-Basic slack integration for WooCommerce
+Basic slack integration for WooCommerce.
 
 ### Dependencies
 
-Run `composer install`  to create the autoloader
+Run `composer install`  to create the autoloader if installing from source.
 
 ### Usage
 
