@@ -1,15 +1,15 @@
 <?php
 
-namespace WooSlack;
+namespace WCSlack;
 
 use WP_User;
-use WooSlack\Admin\WooSlackOptions;
+use WCSlack\Admin\WCSlackOptions;
 
 /**
- * WooSlack 
+ * WCSlack 
  * Handle updating contact details in HubSpot
  */
-class WooSlack
+class WCSlack
 {
     /**
      * Initialize Plugin 
@@ -17,7 +17,7 @@ class WooSlack
     public static function init()
     {
         // If a hubspot api key has been added then register actions
-        $instance = get_option('wooslack_slack_post_hook') ? new WooSlack() : null;
+        $instance = get_option('wc_slack_post_hook') ? new WCSlack() : null;
 
         if ($instance) {
 
@@ -30,7 +30,7 @@ class WooSlack
         }
 
         // Initialize Admin Page
-        WooSlackOptions::init();
+        WCSlackOptions::init();
 
         return $instance;
     }
@@ -50,7 +50,7 @@ class WooSlack
             'text' => "Username: " . $user->user_login,
         ];
 
-        WooSlack::message($message, $attachments);
+        WCSlack::message($message, $attachments);
     }
 
     /**
@@ -66,7 +66,7 @@ class WooSlack
             'text' => "Username: " . $user_login,
         ];
 
-        WooSlack::message($message, $attachments);
+        WCSlack::message($message, $attachments);
     }
 
     /**
@@ -84,7 +84,7 @@ class WooSlack
             'text' => "Username: " . $user->user_login,
         ];
 
-        WooSlack::message($message, $attachments);
+        WCSlack::message($message, $attachments);
     
     }
 
@@ -103,7 +103,7 @@ class WooSlack
             'text' => "Address: " . $load_address,
         ];
 
-        WooSlack::message($message, $attachments);
+        WCSlack::message($message, $attachments);
 
     }
 
@@ -113,7 +113,7 @@ class WooSlack
      */
     public static function message($message, $attachments = null, $channel = '')
     {
-        $use_channel = $channel ? $channel : get_option( 'wooslack_slack_default_channel' );
+        $use_channel = $channel ? $channel : get_option( 'wc_slack_default_channel' );
 
         $data = json_encode(array(
             "channel"=>  "#{$use_channel}",
@@ -122,7 +122,7 @@ class WooSlack
         ));
 
         // validate hook provided in options assuming instructions are not followed.
-        $hook_option = str_replace('https://hooks.slack.com/services', '', get_option('wooslack_slack_post_hook'));
+        $hook_option = str_replace('https://hooks.slack.com/services', '', get_option('wc_slack_post_hook'));
 
         // Start with slash
         $slack_hook = str_starts_with($hook_option, '/')

@@ -1,4 +1,4 @@
-=== WooSlack ===
+=== WCSlack, WooCommerce and Slack Integration ===
 Contributors: Kerkness
 Tags: hubspot, crm, woocommerce, customers
 Requires at least: 5.4
@@ -8,23 +8,23 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-WooSlack posts WooCommerce customer events to a Slack channel. Register, Login, Update Details and Update Address currently supported. More to come.
+WCSlack posts WooCommerce customer events to a Slack channel. Register, Login, Update Details and Update Address currently supported. More to come.
 
 == Description ==
 
-WooSlack posts WooCommerce customer events to a Slack channel. Register, Login, Update Details and Update Address currently supported. More events will be added as required.
+WCSlack posts WooCommerce customer events to a Slack channel. Register, Login, Update Details and Update Address currently supported. More events will be added as required.
 
 To set up this plugin you will need to create a Slack APP and an Incoming Slack WebHook. See: [Incoming Webhooks for Slack](https://slack.com/intl/en-ca/help/articles/115005265063-Incoming-webhooks-for-Slack)
 
 === Post your own messages ===
 
-Add hooks to your own `functions.php` file and send messages to Slack with `wooslack_message("Hello World")`.
+Add hooks to your own `functions.php` file and send messages to Slack with `wc_slack_message("Hello World")`.
 
 === Post interactive messages ===
 
-Post interactive messages with detailed context with `wooslack_message($message, $attachements, $channel)`
+Post interactive messages with detailed context with `wc_slack_message($message, $attachements, $channel)`
 
-- [View the Github page for examples](https://github.com/kerkness/wooslack)
+- [View the Github page for examples](https://github.com/kerkness/wc-slack)
 - [Full slack documentation](https://api.slack.com/messaging/composing/layouts#attachments)
 
 == Frequently Asked Questions ==

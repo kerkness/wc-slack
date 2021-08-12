@@ -1,4 +1,4 @@
-# WooSlack
+# WCSlack - WooCommerce and Slack Integration
 
 Basic slack integration for WooCommerce.
 
@@ -20,7 +20,7 @@ Post your own messages to slack.
 
 *Simple Message*
 ```
-wooslack_post("Hello World!");
+wc_slack_message("Hello World!");
 ```
 
 *Advanced Message*
@@ -28,7 +28,7 @@ wooslack_post("Hello World!");
 ```
 $post = get_post($id);
 
-wooslack_post("Post Update Event", [
+wc_slack_message("Post Update Event", [
         'color' => '#28a745',
         'title' => $post->post_title,
         'text' => "Time Stamp: " . date('Y-m-d D h:i:s a (e)') . "\nPost ID: " . $post->ID ."\Status: " . $post->post_status,

@@ -3,13 +3,13 @@
 /**
  * Main plugin file.
  *
- * @package     WooSlack
+ * @package     WCSlack
  * @author      Kerkness
  * @license     GNU
  *
  * @wordpress-plugin
- * Plugin Name: WooSlack
- * Plugin URI: https://kerkness.ca/wooslack
+ * Plugin Name: WCSlack, WooCommerce and Slack Integration
+ * Plugin URI: https://kerkness.ca/wc-slack
  * Description: Post messages to slack from woocommerce customer events.
  * Version:     1.0.0
  * Requires at least: 5.4
@@ -17,7 +17,7 @@
  * Requires PHP: 7.2
  * Author:      Kerkness
  * Author URI:  https://kerkness.ca
- * Text Domain: wooslack
+ * Text Domain: wc-slack
  * Domain Path: /languages
  * License: GPL2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html 
@@ -28,25 +28,25 @@
 defined('ABSPATH') || exit;
 
 // Include autoloader if plugin isn't running as a dependency
-if (!class_exists('WooSlack\WooSlack')) {
+if (!class_exists('WCSlack\WCSlack')) {
     require_once( __DIR__ . '/lib/autoload.php');
 }
 
-use WooSlack\WooSlack;
+use WCSlack\WCSlack;
 
 
 /**
  * Gets this plugin's absolute directory path.
  *
  */
-function _get_wooslack_plugin_directory() {
+function _get_wc_slack_plugin_directory() {
 	return __DIR__;
 }
 
 /**
  * Gets this plugin's URL.
  */
-function _get_wooslack_plugin_url() {
+function _get_wc_slack_plugin_url() {
 	static $plugin_url;
 
 	if ( empty( $plugin_url ) ) {
@@ -59,8 +59,8 @@ function _get_wooslack_plugin_url() {
 /**
  * Get plugin base name
  */
-if(!function_exists('_get_wooslack_basename')) {
-	function _get_wooslack_basename() {
+if(!function_exists('_get_wc_slack_basename')) {
+	function _get_wc_slack_basename() {
 		return plugin_basename( __FILE__ );
 	}
 }
@@ -68,11 +68,11 @@ if(!function_exists('_get_wooslack_basename')) {
 /**
  * Initalize the plugin
  */
-WooSlack::init();
+WCSlack::init();
 
 // Post to slack
-if (!function_exists('wooslack_message')) {
-	function wooslack_message($message, $attachements = null, $channel = '' ) {
-		WooSlack::message($message, $attachements, $channel);
+if (!function_exists('wc_slack_message')) {
+	function wc_slack_message($message, $attachements = null, $channel = '' ) {
+		WCSlack::message($message, $attachements, $channel);
 	}
 }

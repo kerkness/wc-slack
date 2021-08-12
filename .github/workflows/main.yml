@@ -30,15 +30,15 @@ jobs:
       - name: Create artifact
         uses: montudor/action-zip@v0.1.0
         with:
-          args: zip -X -r build/wooslack.zip . -x assets** *.git* node_modules/\* .* "*/\.*" *.package* *.dist composer.* dev-helpers** build**
+          args: zip -X -r build/wc-slack.zip . -x assets** *.git* node_modules/\* .* "*/\.*" *.package* *.dist composer.* dev-helpers** build**
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-            name: WooSlack Zip
-            path: build/wooslack.zip
+            name: WCSlack Zip
+            path: build/wc-slack.zip
       - name: Upload to release
         uses: JasonEtco/upload-to-release@master
         with:
-          args: build/wooslack.zip application/zip
+          args: build/wc-slack.zip application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
