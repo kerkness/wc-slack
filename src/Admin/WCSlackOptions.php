@@ -29,7 +29,7 @@ class WCSlackOptions
      */
     public function wc_slack_activation_hook()
     {
-        register_uninstall_hook(_get_wc_slack_basename(), 'wc_slack_deactivation_hook' );
+        register_uninstall_hook(_get_wc_slack_basename(), [$this, 'wc_slack_deactivation_hook'] );
     }
 
     /**
