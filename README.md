@@ -1,6 +1,6 @@
-# WCSlack - WooCommerce and Slack Integration
+# Integrator For Slack - WooCommerce/Wordpress and Slack Integration
 
-Basic slack integration for WooCommerce.
+Basic Slack integration for WooCommerce and Wordpress.
 
 ### Dependencies
 

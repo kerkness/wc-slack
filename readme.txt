@@ -1,4 +1,4 @@
-=== WCSlack, WooCommerce and Slack Integration ===
+=== Integrator For Slack ===
 Contributors: Kerkness
 Tags: hubspot, crm, woocommerce, customers
 Requires at least: 5.4
@@ -8,11 +8,11 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-WCSlack posts WooCommerce customer events to a Slack channel. Register, Login, Update Details and Update Address currently supported. More to come.
+Integrator for Slack posts WooCommerce or Wordpress events to a Slack channel. Register, Login, Update Details and Update Address currently supported. More to come.
 
 == Description ==
 
-WCSlack posts WooCommerce customer events to a Slack channel. Register, Login, Update Details and Update Address currently supported. More events will be added as required.
+Integrator for Slack posts WooCommerce or Wordpress customer events to a Slack channel. Register, Login, Update Details and Update Address currently supported. More events will be added as required.
 
 To set up this plugin you will need to create a Slack APP and an Incoming Slack WebHook. See: [Incoming Webhooks for Slack](https://slack.com/intl/en-ca/help/articles/115005265063-Incoming-webhooks-for-Slack)
 

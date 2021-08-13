@@ -8,9 +8,9 @@
  * @license     GNU
  *
  * @wordpress-plugin
- * Plugin Name: WCSlack, WooCommerce and Slack Integration
+ * Plugin Name: Integrator for Slack
  * Plugin URI: https://kerkness.ca/wc-slack
- * Description: Post messages to slack from woocommerce customer events.
+ * Description: Integrator for Slack sends messages from Wordpress and Woocommerce actions or custom events.
  * Version:     1.0.0
  * Requires at least: 5.4
  * Tested up to: 5.8
