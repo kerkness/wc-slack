@@ -15,11 +15,11 @@ class WCSlackOptions
     {
         $instance = new WCSlackOptions();
 
-        register_activation_hook( _get_wc_slack_basename(), [$instance, 'wc_slack_activation_hook'] );
+        register_activation_hook( wc_slack_plugin_basename(), [$instance, 'wc_slack_activation_hook'] );
 
         add_action('init', [$instance, 'wc_slack_register_settings']);
         add_action('admin_menu', [$instance, 'wc_slack_admin_settings_menu']);
-        add_filter('plugin_action_links_' . _get_wc_slack_basename(), [$instance, 'wc_slack_settings_link'], 10, 1);
+        add_filter('plugin_action_links_' . wc_slack_plugin_basename(), [$instance, 'wc_slack_settings_link'], 10, 1);
         add_filter('plugin_row_meta', [$instance, 'plugin_row_meta'], 10, 2);
 
     }
@@ -29,7 +29,7 @@ class WCSlackOptions
      */
     public function wc_slack_activation_hook()
     {
-        register_uninstall_hook(_get_wc_slack_basename(), [$this, 'wc_slack_deactivation_hook'] );
+        register_uninstall_hook(wc_slack_plugin_basename(), [$this, 'wc_slack_deactivation_hook'] );
     }
 
     /**

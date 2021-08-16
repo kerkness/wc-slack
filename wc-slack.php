@@ -36,31 +36,10 @@ use WCSlack\WCSlack;
 
 
 /**
- * Gets this plugin's absolute directory path.
- *
- */
-function _get_wc_slack_plugin_directory() {
-	return __DIR__;
-}
-
-/**
- * Gets this plugin's URL.
- */
-function _get_wc_slack_plugin_url() {
-	static $plugin_url;
-
-	if ( empty( $plugin_url ) ) {
-		$plugin_url = plugins_url( null, __FILE__ );
-	}
-
-	return $plugin_url;
-}
-
-/**
  * Get plugin base name
  */
-if(!function_exists('_get_wc_slack_basename')) {
-	function _get_wc_slack_basename() {
+if(!function_exists('wc_slack_plugin_basename')) {
+	function wc_slack_plugin_basename() {
 		return plugin_basename( __FILE__ );
 	}
 }
