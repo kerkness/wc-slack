@@ -51,6 +51,10 @@ That depends on your Slack account. The plugin accepts only one Incoming Webhook
 
 == Changelog ==
 
+= 1.0.2 =
+* re-factor prefix and removal of test methods
+...
+
 = 1.0.1 =
 * Banner and Readme Updates
 

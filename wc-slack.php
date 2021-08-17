@@ -11,7 +11,7 @@
  * Plugin Name: Integrator for Slack
  * Plugin URI: https://kerkness.ca/wc-slack
  * Description: Integrator for Slack sends messages from Wordpress and Woocommerce actions or custom events.
- * Version:     1.0.1
+ * Version:     1.0.2
  * Requires at least: 5.4
  * Tested up to: 5.8
  * Requires PHP: 7.2
