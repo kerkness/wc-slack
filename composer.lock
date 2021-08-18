@@ -85,16 +85,16 @@
         },
         {
             "name": "kerkness/kore-wp",
-            "version": "v1.0.4",
+            "version": "v1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kerkness/kore-wp.git",
-                "reference": "dfefd70f7560d27559945bce72569ef05b6f7491"
+                "reference": "349bf4286c14d2928a752cf4d2f88d435be7d5d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kerkness/kore-wp/zipball/dfefd70f7560d27559945bce72569ef05b6f7491",
-                "reference": "dfefd70f7560d27559945bce72569ef05b6f7491",
+                "url": "https://api.github.com/repos/kerkness/kore-wp/zipball/349bf4286c14d2928a752cf4d2f88d435be7d5d0",
+                "reference": "349bf4286c14d2928a752cf4d2f88d435be7d5d0",
                 "shasum": ""
             },
             "type": "library",
@@ -116,9 +116,9 @@
             "description": "Common classes for building wordpress plugins",
             "support": {
                 "issues": "https://github.com/kerkness/kore-wp/issues",
-                "source": "https://github.com/kerkness/kore-wp/tree/v1.0.4"
+                "source": "https://github.com/kerkness/kore-wp/tree/v1.0.12"
             },
-            "time": "2021-08-18T16:49:10+00:00"
+            "time": "2021-08-18T21:49:22+00:00"
         }
     ],
     "packages-dev": [],

@@ -34,6 +34,12 @@ if (!class_exists('WCSlack\WCSlack')) {
 
 use WCSlack\WCSlack;
 
+// use Kerkness\KoreWP\KoreWP;
+
+// echo KoreWP::plugin_dir();
+
+// // die();
+
 /**
  * Get plugin base name
  * @return string
