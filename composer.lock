@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2d5072d5fae9d53cb3c510aa4678e98",
+    "content-hash": "334b17dcc3cb0a362102e4389751ab61",
     "packages": [
         {
             "name": "composer/installers",
@@ -82,6 +82,43 @@
                 "source": "https://github.com/composer/installers/tree/master"
             },
             "time": "2013-08-20T04:37:09+00:00"
+        },
+        {
+            "name": "kerkness/kore-wp",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kerkness/kore-wp.git",
+                "reference": "dfefd70f7560d27559945bce72569ef05b6f7491"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kerkness/kore-wp/zipball/dfefd70f7560d27559945bce72569ef05b6f7491",
+                "reference": "dfefd70f7560d27559945bce72569ef05b6f7491",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kerkness\\KoreWP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "kerkness",
+                    "email": "ryan@kerkness.ca"
+                }
+            ],
+            "description": "Common classes for building wordpress plugins",
+            "support": {
+                "issues": "https://github.com/kerkness/kore-wp/issues",
+                "source": "https://github.com/kerkness/kore-wp/tree/v1.0.4"
+            },
+            "time": "2021-08-18T16:49:10+00:00"
         }
     ],
     "packages-dev": [],

@@ -34,9 +34,9 @@ if (!class_exists('WCSlack\WCSlack')) {
 
 use WCSlack\WCSlack;
 
-
 /**
  * Get plugin base name
+ * @return string
  */
 if(!function_exists('wc_slack_plugin_basename')) {
 	function wc_slack_plugin_basename() {

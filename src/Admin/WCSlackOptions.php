@@ -2,12 +2,18 @@
 
 namespace WCSlack\Admin;
 
+use Kerkness\KoreWP\KoreWP;
+use Kerkness\KoreWP\Template;
+
 /**
  * WCSlack Admin Options
  * Create admin page and handle option updates
  */
 class WCSlackOptions
 {
+
+    public $actions = [];
+
     /**
      * Initalize the plugin
      */
@@ -120,34 +126,13 @@ class WCSlackOptions
      */
     public function wc_slack_options_page()
     {
-?>
-        <div class="wrap">
-            <h1><?php echo __('WCSlack Settings', 'wc-slack') ?></h1>
+        // $plugin_name = reset(explode('/', str_replace(WP_PLUGIN_DIR . '/', '', __DIR__)));
 
-            <form method="post" action="options.php">
-                <?php settings_fields('wc_slack_settings'); ?>
-                <?php do_settings_sections('wc_slack_settings'); ?>
-                <table class="form-table">
-                    <tr valign="top">
-                        <th scope="row"><?php echo __('Slack Hook', 'wc-slack') ?></th>
-                        <td>
-                        https://hooks.slack.com/services    
-                        <input type="text" name="wc_slack_post_hook" value="<?php echo esc_attr(get_option('wc_slack_post_hook')); ?>" /></td>
-                    </tr>
-                    <tr valign="top">
-                        <th scope="row"><?php echo __('Default Channel', 'wc-slack') ?></th>
-                        <td>
-                            <input type="text" name="wc_slack_default_channel" value="<?php echo esc_attr(get_option('wc_slack_default_channel')); ?>" /><br/>
-                            * Note you have to configure your slack webhook to have permissions for multiple channels.
-                        </td>
-                    </tr>
+        // echo $plugin_name;
 
-                </table>
+        // echo plugins_url( $plugin_name . '/images/wordpress.png' );
 
-                <?php submit_button(); ?>
+        echo Template::render('admin-options');
 
-            </form>
-        </div>
-<?php
     }
 }
