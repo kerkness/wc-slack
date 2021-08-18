@@ -2,7 +2,6 @@
 
 namespace WCSlack\Admin;
 
-use Kerkness\KoreWP\KoreWP;
 use Kerkness\KoreWP\Template;
 
 /**
@@ -126,13 +125,6 @@ class WCSlackOptions
      */
     public function wc_slack_options_page()
     {
-        // $plugin_name = reset(explode('/', str_replace(WP_PLUGIN_DIR . '/', '', __DIR__)));
-
-        // echo $plugin_name;
-
-        // echo plugins_url( $plugin_name . '/images/wordpress.png' );
-
-        echo Template::render('admin-options');
-
+        echo Template::render('admin-options', [], __FILE__);
     }
 }
