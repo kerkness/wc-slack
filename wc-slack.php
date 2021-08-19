@@ -32,13 +32,10 @@ if (!class_exists('WCSlack\WCSlack')) {
     require_once( __DIR__ . '/lib/autoload.php');
 }
 
-use WCSlack\WCSlack;
+// PHP 8 Support
+// Plugin uses some php 8 methods.  Include this file for reverse compatibility with php 7
+require_once __DIR__ . '/lib/kerkness/kore-wp/php_8/functions.php';
 
-// use Kerkness\KoreWP\KoreWP;
-
-// echo KoreWP::plugin_dir();
-
-// // die();
 
 /**
  * Get plugin base name
@@ -53,11 +50,11 @@ if(!function_exists('wc_slack_plugin_basename')) {
 /**
  * Initalize the plugin
  */
-WCSlack::init();
+\WCSlack\WCSlack::init();
 
 // Post to slack
 if (!function_exists('wc_slack_message')) {
 	function wc_slack_message($message, $attachements = null, $channel = '' ) {
-		WCSlack::message($message, $attachements, $channel);
+		\WCSlack\WCSlack::message($message, $attachements, $channel);
 	}
 }

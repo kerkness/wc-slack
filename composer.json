@@ -20,7 +20,7 @@
   "require": {
     "php": ">=7.1.0",
     "composer/installers": "v1.0.6",
-    "kerkness/kore-wp": "^1.0"
+    "kerkness/kore-wp": "^v1.0.13"
   },
   "autoload": {
     "psr-4": {

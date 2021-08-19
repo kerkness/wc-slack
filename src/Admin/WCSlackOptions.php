@@ -125,6 +125,6 @@ class WCSlackOptions
      */
     public function wc_slack_options_page()
     {
-        echo Template::render('admin-options', [], __FILE__);
+        Template::render('admin-options', [], __FILE__);
     }
 }
