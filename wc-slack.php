@@ -11,7 +11,7 @@
  * Plugin Name: Integrator for Slack
  * Plugin URI: https://kerkness.ca/wc-slack
  * Description: Integrator for Slack sends messages from Wordpress and Woocommerce actions or custom events.
- * Version:     1.0.1
+ * Version:     1.0.3
  * Requires at least: 5.4
  * Tested up to: 5.8
  * Requires PHP: 7.2
@@ -32,35 +32,17 @@ if (!class_exists('WCSlack\WCSlack')) {
     require_once( __DIR__ . '/lib/autoload.php');
 }
 
-use WCSlack\WCSlack;
+// PHP 8 Support
+// Plugin uses some php 8 methods.  Include this file for reverse compatibility with php 7
+require_once __DIR__ . '/lib/kerkness/kore-wp/php_8/functions.php';
 
-
-/**
- * Gets this plugin's absolute directory path.
- *
- */
-function _get_wc_slack_plugin_directory() {
-	return __DIR__;
-}
-
-/**
- * Gets this plugin's URL.
- */
-function _get_wc_slack_plugin_url() {
-	static $plugin_url;
-
-	if ( empty( $plugin_url ) ) {
-		$plugin_url = plugins_url( null, __FILE__ );
-	}
-
-	return $plugin_url;
-}
 
 /**
  * Get plugin base name
+ * @return string
  */
-if(!function_exists('_get_wc_slack_basename')) {
-	function _get_wc_slack_basename() {
+if(!function_exists('wc_slack_plugin_basename')) {
+	function wc_slack_plugin_basename() {
 		return plugin_basename( __FILE__ );
 	}
 }
@@ -68,11 +50,11 @@ if(!function_exists('_get_wc_slack_basename')) {
 /**
  * Initalize the plugin
  */
-WCSlack::init();
+\WCSlack\WCSlack::init();
 
 // Post to slack
 if (!function_exists('wc_slack_message')) {
 	function wc_slack_message($message, $attachements = null, $channel = '' ) {
-		WCSlack::message($message, $attachements, $channel);
+		\WCSlack\WCSlack::message($message, $attachements, $channel);
 	}
 }

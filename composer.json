@@ -1,28 +1,33 @@
 {
-    "name": "kerkness/wc-slack",
-    "description": "Integrates WooCommerce and Slack.",
-    "keywords": ["wordpress", "plugin", "woocommerce", "slack"],
-    "homepage": "https://kerkness.ca",
-    "license": "GNU",
-    "authors": [
-      {
-        "name": "kerkness",
-        "email": "ryan@kerkness.ca",
-        "homepage": "https://kerkness.ca"
-      }
-    ],
-    "type": "wordpress-plugin",
-    "require": {
-      "php": ">=7.1.0",
-      "composer/installers": "v1.0.6"
-    },
-    "autoload"    : {
-      "psr-4" : {
-        "WCSlack\\" : "src"
-      }
-    },
-    "config": { 
-      "vendor-dir": "lib"
+  "name": "kerkness/wc-slack",
+  "description": "Integrates WooCommerce and Slack.",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "woocommerce",
+    "slack"
+  ],
+  "homepage": "https://kerkness.ca",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "kerkness",
+      "email": "ryan@kerkness.ca",
+      "homepage": "https://kerkness.ca"
     }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=7.1.0",
+    "composer/installers": "v1.0.6",
+    "kerkness/kore-wp": "^v1.0.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "WCSlack\\": "src"
+    }
+  },
+  "config": {
+    "vendor-dir": "lib"
   }
-  
+}
