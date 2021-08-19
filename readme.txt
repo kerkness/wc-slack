@@ -6,7 +6,7 @@ Contributors: kerkness
 Tags: hubspot, crm, woocommerce, customers
 Requires at least: 5.4
 Tested up to: 5.8
-Stable tag: 1.0.1
+Stable tag: 1.0.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,6 +50,9 @@ That depends on your Slack account. The plugin accepts only one Incoming Webhook
 2. Sample custom messages from a wp_insert_post action
 
 == Changelog ==
+
+= 1.0.3 =
+* switched to using kerkness/kore-wp library for common functions 
 
 = 1.0.2 =
 * re-factor prefix and removal of test methods
